@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://yourbankapi-mahmoud-khames-mahmoud-khames-projects.vercel.app/api/users/login", {
+      const response = await fetch("https://yourbankapi.vercel.app/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

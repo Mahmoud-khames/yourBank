@@ -18,7 +18,7 @@ const Sigup = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://yourbankapi-mahmoud-khames-mahmoud-khames-projects.vercel.app/api/users/register", {
+      const response = await fetch("https://yourbankapi.vercel.app/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

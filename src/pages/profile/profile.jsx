@@ -36,7 +36,7 @@ export default function Profile() {
       setLoading(true);
 
       const data = await axios.post(
-        `https://yourbankapi-mahmoud-khames-mahmoud-khames-projects.vercel.app/api/users/updateUser/${user._id}`,
+        `https://yourbankapi.vercel.app/api/users/updateUser/${user._id}`,
         {
           fristName: form.fristName,
           lastName: form.lastName,

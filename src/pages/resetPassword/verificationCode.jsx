@@ -16,7 +16,7 @@ const ResetPassword = () => {
 
     try {
       const response = await fetch(
-        `https://yourbankapi-mahmoud-khames-mahmoud-khames-projects.vercel.app/api/users/reset-password/${userId}/${token}`,
+        `https://yourbankapi.vercel.app/api/users/reset-password/${userId}/${token}`,
         {
           method: "POST",
           headers: {

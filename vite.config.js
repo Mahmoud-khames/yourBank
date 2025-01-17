@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://yourbankapi-mahmoud-khames-mahmoud-khames-projects.vercel.app',
+      '/api': 'https://yourbankapi.vercel.app',
     },
   },
   
