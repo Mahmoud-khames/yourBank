@@ -15,7 +15,7 @@ const VerificationCode = () => {
 
     try {
       const response = await fetch(
-        "https://yourbankapi.vercel.app/api/users/verifyEmail",
+        "https://yourbankapi-mahmoud-khames-mahmoud-khames-projects.vercel.app/api/users/verifyEmail",
         {
           method: "POST",
           headers: {

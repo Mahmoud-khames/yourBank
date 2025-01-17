@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import {BrowserRouter} from "react-router-dom";
+import { HashRouter} from "react-router-dom";
 import { persistor, store } from './store/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -12,14 +12,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
     <Provider store={store}>
       <PersistGate  persistor={persistor}>
       <App />
       </PersistGate>
     </Provider>
       
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
