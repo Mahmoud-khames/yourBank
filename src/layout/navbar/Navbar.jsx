@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
         <div ref={Nav} className="all_navagiton noResponsive m-auto ">
           <div className="nav_main my-auto">
-            {cookies.access_token && user && (
+            { (
               <ul className="ul_main">
                 <li
                   onClick={closeNav}

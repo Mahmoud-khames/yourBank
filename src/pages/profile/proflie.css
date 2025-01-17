@@ -123,14 +123,15 @@
         gap: 30px;
         overflow: hidden;
     }
-    .profile .image_profile{
-        width: 100%;
-    }
+
     .profile .info_profile{
         width: 100%;
         
     }
     .info_profile .input input{
-        width: 250px;
+        width: auto;
+    }
+    .info_profile .input {
+        width: auto;
     }
 }
