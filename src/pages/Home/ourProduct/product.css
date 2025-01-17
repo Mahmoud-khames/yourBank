@@ -1,0 +1,199 @@
+.productHome {
+    display: flex;
+    width: 1596px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    margin-top: 100px;
+
+}
+
+.productHome .product_content {
+    display: flex;
+    align-items: center;
+    gap: 300px;
+    align-self: stretch;
+}
+
+.productHome .product_content .title {
+    color: var(--White, #FFF);
+    font-family: Lexend;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 72px */
+}
+
+.productHome .product_content .title span {
+    color: var(--color-60, #CAFF33);
+    font-family: Lexend;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.productHome .product_content .description {
+    color: var(--color-70-2, #B3B3B3);
+    font-family: Lexend;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    /* 27px */
+}
+
+.productHome .pro_btn {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 82px;
+    border: 1px solid var(--grey-15, #262626);
+    background: var(--grey-11, #1C1C1C);
+    width: 300px;
+    height: 65px;
+}
+
+.productHome .pro_btn .pro_btn_frist,
+.productHome .pro_btn .pro_btn_scond {
+    display: flex;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 130px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-border-radius: 130px;
+    -moz-border-radius: 130px;
+    -ms-border-radius: 130px;
+    -o-border-radius: 130px;
+    text-align: center;
+    width: 135px;
+}
+
+.productHome .pro_btn .pro_btn_frist {
+    background: var(--color-60, #CAFF33);
+}
+
+.productHome .pro_btn .pro_btn_scond {
+    color: var(--absolute-white, #FFF);
+    font-family: Lexend;
+
+    /* 21px */
+}
+
+.productHome .product_info {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.productHome .product_info .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    flex: 1 0 0;
+}
+
+.productHome .product_info .box .icon {
+    display: flex;
+    padding: 14px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 70px;
+    background: linear-gradient(180deg, rgba(202, 255, 51, 0.05) 0%, rgba(202, 255, 51, 0.00) 100%);
+    position: relative;
+    justify-content: center;
+}
+.productHome .product_info .box .icon span{
+    background: linear-gradient(180deg, rgba(202, 255, 51, 0.10) -66.22%, rgba(202, 255, 51, 0.00) 85.46%);
+    width: 40px;
+    position: absolute;
+    height: 40px;
+    z-index: -7;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.productHome .product_info .box .icon svg {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    padding: 3px 1px; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+   
+    background: linear-gradient(180deg, rgba(202, 255, 51, 0.10) -66.22%, rgba(202, 255, 51, 0.00) 85.46%);
+    -webkit-border-radius: 60px;
+    width: 28px;
+    height: 28px;
+}
+
+.productHome .product_info .box .title {
+    color: var(--absolute-white, #FFF);
+    text-align: center;
+    font-family: Lexend;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 30px */
+}
+
+.productHome .product_info .box .description {
+    color: var(--grey-70, #B3B3B3);
+    text-align: center;
+    font-family: Lexend;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    /* 24px */
+}
+
+.product_info .line {
+    width: 1px;
+    height: 262px;
+    background: #262626;
+}
+
+@media (max-width: 996px) {
+    .productHome .product_content {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .productHome .product_content .title {
+        text-align: center;
+    }
+
+    .productHome .product_content .description {
+        text-align: center;
+    }
+
+    .productHome .product_info {
+        flex-direction: column;
+    }
+
+    .product_info .line {
+        width: 338px;
+        height: 1px;
+        margin: auto;
+
+    }
+
+    .productHome .product_info .box .description {
+        text-align: center;
+    }
+
+}

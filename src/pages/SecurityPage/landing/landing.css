@@ -1,0 +1,108 @@
+.landingSecurity {
+    display: flex;
+    width: 1279px;
+    padding: 40px;
+    align-items: flex-start;
+    gap: -174px;
+    overflow: hidden;
+}
+
+.landingSecurity .landingSecurity__content {
+    position: relative;
+    display: flex;
+    width: 600px;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex-shrink: 0;
+    border-radius: 20px 0px 60px 20px;
+    background: var(--grey-10, #1A1A1A);
+    margin-left: auto;
+    z-index: 3;
+}
+
+.landingSecurity__content .tilte {
+    color: var(--White, #FFF);
+    font-family: Lexend;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.landingSecurity__content .span {
+    color: var(--color-60, #CAFF33) !important;
+}
+
+.landingSecurity .landingSecurity__content .description {
+    color: var(--grey-70, #B3B3B3);
+    font-family: Lexend;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    /* 27px */
+}
+
+.landingSecurity .landingSecurity__img {
+    background-image: url("../images/Image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-position: left;
+    background-origin: 25%;
+    padding: 55px;
+    height: 410px;
+    flex: 2 0;
+    border-radius: 16px;
+    background-blend-mode: overlay, normal, normal;
+    margin-left: -140px;
+}
+
+.landingSecurity__img .vector2 {
+    width: 334px;
+    height: 317px;
+    top: 0;
+    right: 0;
+    top: 10px;
+    right: -8px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+@media screen and (max-width: 996px) {
+    .landingSecurity {
+        flex-direction: column-reverse;
+    }
+
+    .landingSecurity .landingSecurity__content {
+        display: flex;
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: auto;
+        align-self: stretch;
+    }
+
+    .landingSecurity .landingSecurity__content .tilte {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .landingSecurity .landingSecurity__content .description {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .landingSecurity .landingSecurity__img {
+        padding: 100px;
+        margin: auto;
+        width: 320px;
+        border-radius: 16px;
+    }
+}

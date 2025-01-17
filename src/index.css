@@ -1,0 +1,57 @@
+:root {
+  --White: #FFF;
+  --Black: #000;
+  --color-60: #CAFF33;
+  --color-65: #D1FF4C;
+  --color-70: #D8FF66;
+  --color-80: #E5FF99;
+  --color-90: #F2FFCC;
+  --color-95: #F8FFE5;
+  --color-97: #FBFFF0;
+  --color-99: #FEFFFA;
+  --color-10: #191919;
+  --color-11: #1C1C1C;
+  --color-12: #262626;
+  --color-15: #333333;
+  --color-30: #4C4C4D;
+  --color-35: #59595A;
+  --color-40: #656567;
+  --color-60-2: #98989A;
+  --color-70-2: #B3B3B3;
+  --color-75: #BFBFBF;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-10) !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
