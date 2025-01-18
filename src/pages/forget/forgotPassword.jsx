@@ -1,9 +1,7 @@
-import React, {  useState ,useRef } from "react";
-
-
+import React, { useState, useRef } from "react";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
-
   const [email, setEmail] = useState("");
   const [Error, setError] = useState("");
   const [block, setBlock] = useState(false);
@@ -15,6 +13,7 @@ const ForgotPassword = () => {
     try {
       const response = await fetch(
         "https://yourbankapi.vercel.app/api/users/forgotpassword",
+        // "http://localhost:4000/api/users/forgotpassword",
         {
           method: "POST",
           headers: {
@@ -28,16 +27,16 @@ const ForgotPassword = () => {
 
       if (response) {
         const data = await response.json();
-         setError(data.message);
-      console.log(data);
-      if (data.Status !== "success") {
-        setBlock(true);
-      } else {
-        setBlock(false);
-        alert("Check your email");
+        setError(data.message);
+       
+        if (data.Status !== "success") {
+          setBlock(true);
+           toast.error(data.message);
+        } else {
+          setBlock(false);
+          toast.success("Check your email");
+        }
       }
-    } 
-      
     } catch (error) {
       console.log(error + "err");
     }
@@ -65,7 +64,11 @@ const ForgotPassword = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input className="btn text-white-50 " type="submit" value="Submit" />
+            <input
+              className="btn text-white-50 "
+              type="submit"
+              value="Submit"
+            />
           </div>
         </div>
       </form>

@@ -1,22 +1,21 @@
-import{  useState ,useRef } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router";
-
-
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
-
   const [password, setPassword] = useState("");
   const [Error, setError] = useState("");
   const [block, setBlock] = useState(false);
   const error = useRef(null);
   const navigation = useNavigate();
-  const {userId , token } = useParams();
+  const { userId, token } = useParams();
   const onSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await fetch(
         `https://yourbankapi.vercel.app/api/users/reset-password/${userId}/${token}`,
+        // `http://localhost:4000/api/users/reset-password/${userId}/${token}`,
         {
           method: "POST",
           headers: {
@@ -30,19 +29,19 @@ const ResetPassword = () => {
 
       if (response) {
         const data = await response.json();
-         setError(data.message);
-      console.log(data);
-      if (data.Status !== "success") {
-        setBlock(true);
-      } else {
-        setBlock(false);
-        alert("complete your chenge password successfully");
-        setTimeout(() => {
+        setError(data.message);
+        
+        console.log(data);
+        if (data.Status !== "success") {
+          setBlock(true);
+          toast.error(data.message);
+        } else {
+          setBlock(false);
+          toast.success("complete your chenge password successfully");
+
           navigation("/login");
-        }, 3000);
+        }
       }
-    } 
-      
     } catch (error) {
       console.log(error + "err");
     }
@@ -69,7 +68,11 @@ const ResetPassword = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <input className="btn text-white-50 " type="submit" value="Submit" />
+            <input
+              className="btn text-white-50 "
+              type="submit"
+              value="Submit"
+            />
           </div>
         </div>
       </form>

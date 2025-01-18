@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 import { login } from "../../reducers/authSlice";
+import { toast } from "react-toastify";
 const Login = () => {
   const [open, setOpen] = useState(true);
   const disPatch = useDispatch();
@@ -23,7 +24,10 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://yourbankapi.vercel.app/api/users/login", {
+      const response = await fetch(
+        "https://yourbankapi.vercel.app/api/users/login" ,
+        // "http://localhost:4000/api/users/login" ,
+         {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,14 +42,16 @@ const Login = () => {
       if (response) {
         const data = await response.json();
         setError(data.message);
-        console.log(data);
+        
 
         if (data.data === null) {
+          toast.error(data.message);
           setBlock(true);
         } else {
           setBlock(false);
           setCookies("access_token", data.token, { path: "/", maxAge: 3600 });
           disPatch(login(data.data));
+          toast.success("Login successfully");
           navigation("/");
         }
       }

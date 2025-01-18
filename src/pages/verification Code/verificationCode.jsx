@@ -1,10 +1,8 @@
-import React, {  useState ,useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router";
-
-
+import { toast } from "react-toastify";
 
 const VerificationCode = () => {
-
   const [code, setCode] = useState("");
   const [Error, setError] = useState("");
   const [block, setBlock] = useState(false);
@@ -16,6 +14,7 @@ const VerificationCode = () => {
     try {
       const response = await fetch(
         "https://yourbankapi.vercel.app/api/users/verifyEmail",
+        // "http://localhost:4000/api/users/verifyEmail",
         {
           method: "POST",
           headers: {
@@ -29,19 +28,18 @@ const VerificationCode = () => {
 
       if (response) {
         const data = await response.json();
-         setError(data.message);
-      console.log(data);
-      if (data.Status !== "success") {
-        setBlock(true);
-      } else {
-        setBlock(false);
-        alert("complete your registration successfully");
-        setTimeout(() => {
+        setError(data.message);
+
+        console.log(data);
+        if (data.Status !== "success") {
+          toast.error(data.message);
+          setBlock(true);
+        } else {
+          setBlock(false);
+          toast.success("complete your registration successfully");
           navigation("/login");
-        }, 3000);
+        }
       }
-    } 
-      
     } catch (error) {
       console.log(error + "err");
     }
@@ -57,7 +55,8 @@ const VerificationCode = () => {
           )}
           <h1 className="title">Verification Code</h1>
           <p className="description">
-            Welcome back! Please Enter this code on the verification page to complete your registration
+            Welcome back! Please Enter this code on the verification page to
+            complete your registration
           </p>
           <div className="form_input flex-column">
             <input
@@ -68,7 +67,11 @@ const VerificationCode = () => {
               value={code}
               onChange={(e) => setCode(e.target.value)}
             />
-            <input className="btn text-white-50 " type="submit" value="Submit" />
+            <input
+              className="btn text-white-50 "
+              type="submit"
+              value="Submit"
+            />
           </div>
         </div>
       </form>

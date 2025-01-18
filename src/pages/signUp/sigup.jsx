@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
+import { toast } from "react-toastify";
 const Sigup = () => {
   const [open, setOpen] = useState(true);
   const [block, setBlock] = useState(false);
@@ -18,7 +19,10 @@ const Sigup = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://yourbankapi.vercel.app/api/users/register", {
+      const response = await fetch(
+        "https://yourbankapi.vercel.app/api/users/register",
+        // "http://localhost:4000/api/users/register",
+         {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,14 +39,17 @@ const Sigup = () => {
         const data = await response.json();
 
         setError(data.message);
+        
         if (data.data === null) {
           setBlock(true);
+          toast.error(data.message);
         } else {
           setBlock(false);
-          alert("Sign Up Successful");
-          setTimeout(() => {
+          toast.success("Sign Up Successful");
+     
+        
             navigation("/verificationCode");
-          }, 3000);
+         
         }
 
         console.log(data);
